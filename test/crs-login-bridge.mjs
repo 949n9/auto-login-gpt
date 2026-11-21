@@ -1,0 +1,113 @@
+import assert from "node:assert/strict";
+import fs from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
+import { authenticateBridge, validateBridgeInput, createCrsLoginBridge } from "../src/crs-login-bridge.mjs";
+import { createServerDatabase } from "../src/server-database.mjs";
+
+const root = await fs.mkdtemp(path.join(os.tmpdir(), "tosub2-bridge-unit-"));
+let database = createServerDatabase({ outputRoot: root });
+const jobs = new Map();
+const secret = "dedicated-service-secret";
+const credentials = { access_token: "private-access", refresh_token: "private-refresh", id_token: "private-id", email: "bridge@example.com", password: "never-export" };
+let starts = 0;
+let release;
+let afterBind;
+let beforeRead;
+let testNow = Date.now();
+const bridges = [];
+const makeBridge = (options = {}) => { const bridge = createCrsLoginBridge({ database, now: () => testNow, inspect: (id) => jobs.get(id), readCredentials: async () => { await beforeRead?.(); return credentials; }, start: async (input, bind) => {
+  starts += 1;
+  bind(`job-${input.operationId}`);
+  await afterBind?.();
+  jobs.set(`job-${input.operationId}`, { id: `job-${input.operationId}`, status: "running", crsBridgeOperationId: input.operationId });
+}, ...options }); bridges.push(bridge); return bridge; };
+
+try {
+  assert.throws(() => authenticateBridge(undefined, secret), { status: 401 });
+  assert.throws(() => authenticateBridge(`Bearer ${secret}`, ""), { status: 503 });
+  for (const header of [secret, `Basic ${secret}`, `Bearer wrong`, `Bearer ${secret} `]) assert.throws(() => authenticateBridge(header, secret), { status: 401 });
+  authenticateBridge(`Bearer ${secret}`, secret);
+  assert.deepEqual(validateBridgeInput({ operationId: "op-1", email: " BRIDGE@example.com " }), { operationId: "op-1", email: "bridge@example.com" });
+  assert.equal(Object.hasOwn(validateBridgeInput({ operationId: "op-1", email: "a@b.co" }), "proxyUrl"), false);
+  assert.equal(Object.hasOwn(validateBridgeInput({ operationId: "op-1", email: "a@b.co", totpSecret: "" }), "totpSecret"), false);
+  assert.equal(validateBridgeInput({ operationId: "op-1", email: "a@b.co", proxyUrl: null }).proxyUrl, null);
+  assert.equal(validateBridgeInput({ operationId: "op-1", email: "a@b.co", proxyUrl: "" }).proxyUrl, "");
+  assert.equal(validateBridgeInput({ operationId: "op-1", email: "a@b.co", proxyUrl: "socks5://127.0.0.1:1080" }).proxyUrl, "socks5://127.0.0.1:1080");
+  for (const extra of [{ operationId: "../bad" }, { password: "" }, { proxyUrl: "file:///tmp/file" }, { proxyUrl: " " }, { proxyUrl: "\t\n" }, { proxyUrl: false }, { proxyUrl: 0 }, { proxyUrl: {} }, { proxyUrl: [] }, { unexpected: "field" }, { email: "invalid" }]) assert.throws(() => validateBridgeInput({ operationId: "valid", email: "a@b.co", ...extra }), { status: 400 });
+
+  let bridge = makeBridge();
+  afterBind = () => new Promise((resolve) => { release = resolve; });
+  const input = { operationId: "op-1", email: "bridge@example.com", password: "private-password" };
+  const pending = Array.from({ length: 8 }, () => bridge.submit(input));
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(starts, 1);
+  assert.equal(bridge.activeStarts(), 1);
+  assert.equal((await bridge.get("op-1")).status, "pending", "polling a partially bound start must not fail it");
+  release();
+  assert.ok((await Promise.all(pending)).every((value) => value.jobId === "job-op-1" && value.status === "running"));
+  assert.equal(starts, 1);
+  await assert.rejects(bridge.submit({ ...input, proxyUrl: null }), { status: 409 });
+
+  jobs.get("job-op-1").status = "completed";
+  const completed = await bridge.get("op-1");
+  assert.equal(completed.status, "succeeded");
+  assert.deepEqual(completed.credentials, { access_token: "private-access", refresh_token: "private-refresh", id_token: "private-id", email: "bridge@example.com" });
+  bridge.close();
+  database.close();
+  database = createServerDatabase({ outputRoot: root });
+  bridge = makeBridge();
+  jobs.get("job-op-1").crsBridgeOperationId = "later-operation";
+  assert.deepEqual(await bridge.get("op-1"), completed, "completed result must be immutable across restart and later login");
+  assert.deepEqual(await bridge.submit(input), completed, "idempotent POST includes completed credentials");
+  assert.equal(starts, 1);
+
+  afterBind = null;
+  await bridge.submit({ ...input, operationId: "wrong-generation" });
+  jobs.get("job-wrong-generation").status = "completed";
+  jobs.get("job-wrong-generation").crsBridgeOperationId = "new-generation";
+  assert.equal((await bridge.get("wrong-generation")).status, "failed");
+  await bridge.submit({ ...input, operationId: "race" });
+  jobs.get("job-race").status = "completed";
+  beforeRead = () => { jobs.get("job-race").crsBridgeOperationId = "newer-generation"; };
+  assert.equal((await bridge.get("race")).status, "failed", "a generation changed during credential read must be rejected");
+  beforeRead = null;
+  await bridge.submit({ ...input, operationId: "concurrent-result" });
+  jobs.get("job-concurrent-result").status = "completed";
+  let reads = 0;
+  let resumeRead;
+  beforeRead = () => ++reads === 2 ? new Promise((resolve) => { resumeRead = resolve; }) : undefined;
+  const firstResult = bridge.get("concurrent-result");
+  const delayedResult = bridge.get("concurrent-result");
+  const frozenResult = await firstResult;
+  jobs.get("job-concurrent-result").crsBridgeOperationId = "later-generation";
+  resumeRead();
+  assert.deepEqual(await delayedResult, frozenResult, "a concurrent late poll cannot overwrite an already frozen terminal result");
+  beforeRead = null;
+  await bridge.submit({ ...input, operationId: "failed" });
+  jobs.get("job-failed").status = "failed";
+  jobs.get("job-failed").lastError = "private-password and private-refresh";
+  assert.doesNotMatch(JSON.stringify(await bridge.get("failed")), /private-/);
+
+  database.put("crs-login-operation", "interrupted", { operationId: "interrupted", email: input.email, status: "starting" });
+  assert.equal((await makeBridge().get("interrupted")).status, "failed");
+  await assert.rejects(bridge.get("missing"), { status: 404 });
+  const beforeExpiry = starts;
+  testNow += 24 * 60 * 60_000 + 1;
+  bridge.cleanup();
+  assert.equal((await bridge.get("op-1")).status, "failed");
+  assert.equal(database.get("crs-login-operation", "op-1").credentials, undefined, "expired OAuth material is removed from persistent records");
+  assert.equal((await bridge.submit(input)).status, "failed");
+  assert.equal(starts, beforeExpiry, "expired operation IDs retain deduplication tombstones");
+  const capacityBridge = makeBridge({ maxOperations: 1 });
+  await assert.rejects(capacityBridge.submit({ ...input, operationId: "capacity" }), { status: 503 });
+  const files = await fs.readdir(root, { recursive: true });
+  const sqliteFiles = files.filter((name) => /\.sqlite3(?:-wal)?$/.test(name));
+  assert.ok(sqliteFiles.length);
+  for (const file of sqliteFiles) assert.doesNotMatch((await fs.readFile(path.join(root, file))).toString(), /private-access|private-refresh|private-password/);
+  console.log("CRS bridge auth, persistence, idempotence and generation tests passed");
+} finally {
+  bridges.forEach((bridge) => bridge.close());
+  database.close();
+  await fs.rm(root, { recursive: true, force: true });
+}

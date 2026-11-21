@@ -1,0 +1,77 @@
+services:
+  initialize:
+    image: alpine:3.22
+    user: "0:0"
+    command: ["sh", "-c", "chown 1000:1000 /data /state && chmod 700 /data /state"]
+    volumes:
+      - account-data:/data
+      - login-state:/state
+    network_mode: none
+    restart: "no"
+
+  app:
+    build: .
+    restart: unless-stopped
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    tmpfs: ["/tmp:rw,nosuid,size=256m"]
+    environment:
+      TOSUB2_CONSOLE_TOKEN: ${TOSUB2_CONSOLE_TOKEN:?Run python3 tools/setup.py first}
+      CRS_LOGIN_BRIDGE_KEY: ${CRS_LOGIN_BRIDGE_KEY:?Run python3 tools/setup.py first}
+      TOSUB2_DEFAULT_OPERATION_PROXY_ENABLED: ${TOSUB2_DEFAULT_OPERATION_PROXY_ENABLED:-0}
+      TOSUB2_OPERATION_PROXY_URL: ${TOSUB2_OPERATION_PROXY_URL:-}
+      TOSUB2_DYNAMIC_PROXY_EXTRACTION: ${TOSUB2_DYNAMIC_PROXY_EXTRACTION:-0}
+    volumes:
+      - account-data:/data
+    depends_on:
+      initialize:
+        condition: service_completed_successfully
+    healthcheck:
+      test: [CMD, node, --input-type=module, -e, "const r=await fetch('http://127.0.0.1:4399/api/bootstrap');process.exit(r.ok?0:1)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+
+  login:
+    build:
+      context: .
+      dockerfile: auth/Dockerfile
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    environment:
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?Run python3 tools/setup.py first}
+      AUTH_PORT: "4410"
+      AUTH_VERIFY_URL: http://edge:8081/verify
+      AUTH_PASSWORD_FILE: /auth-passwords
+      AUTH_STATE_DIR: /state
+      AUTH_TRUST_PROXY: "true"
+    volumes:
+      - login-state:/state
+      - ./private/access.htpasswd:/auth-passwords:ro
+    depends_on:
+      initialize:
+        condition: service_completed_successfully
+
+  edge:
+    image: nginx:stable-alpine
+    restart: unless-stopped
+    ports:
+      - "${HTTPS_BIND:-127.0.0.1}:${HTTPS_PORT:-8443}:8443"
+    volumes:
+      - ./deploy/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./private/access.htpasswd:/etc/nginx/access.htpasswd:ro
+      - ./private/tls:/etc/nginx/tls:ro
+    depends_on:
+      app:
+        condition: service_healthy
+      login:
+        condition: service_started
+
+volumes:
+  account-data:
+  login-state:

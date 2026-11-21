@@ -1,0 +1,16 @@
+*
+!Dockerfile
+!package.json
+!package-lock.json
+!requirements.txt
+!LICENSE
+!UPSTREAM.md
+!src/
+!src/**
+!web/
+!web/**
+!auth/
+!auth/**
+web/dist/
+**/__pycache__/
+**/*.pyc

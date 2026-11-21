@@ -1,0 +1,54 @@
+{
+  "name": "auto-login-gpt",
+  "version": "1.0.0",
+  "description": "账号登录、Codex 授权及 Sub2API / CRS 推送管理",
+  "type": "module",
+  "scripts": {
+    "build": "vite build web --outDir dist --emptyOutDir --target es2020",
+    "dev": "node src/console-server.mjs",
+    "start": "node src/console-server.mjs",
+    "check:proxy": "node --check src/console-server.mjs && node test/console-proxy-selection.mjs",
+    "check:database": "node --check src/server-database.mjs && node test/server-database.mjs",
+    "check:crs": "node --check src/crs-integration.mjs && node test/crs-integration.mjs",
+    "check:login": "node test/account-tls.mjs && node test/login-tls-migration.mjs && node test/login-correctness.mjs && node test/login-integration.mjs && node test/account-tls-wire.mjs && node test/tls-certificates.mjs && node test/console-crs-bridge.mjs",
+    "daemon:start": "pm2 start ecosystem.config.cjs",
+    "daemon:restart": "pm2 restart auto-login-gpt --update-env",
+    "daemon:stop": "pm2 stop auto-login-gpt",
+    "daemon:logs": "pm2 logs auto-login-gpt",
+    "check": "node --check src/console-server.mjs && node --check src/protocol-login.mjs && node --check src/tls-transport.mjs && node --check src/mail-otp.mjs && node --check src/luban-sms.mjs && node --check src/smsbower.mjs && node --check src/custom-sms.mjs && node --check src/sms-providers.mjs && node --check src/credential-store.mjs && node test/tls-transport.mjs && node test/credential-store.mjs && node test/sms-providers.mjs && node test/console-job-lock-smoke.mjs && node test/console-smoke.mjs && node test/console-restore-shutdown-smoke.mjs && node test/sms-provider-console-smoke.mjs && node test/protocol-smoke.mjs && node test/password-mfa-workspace-smoke.mjs",
+    "check:security": "node --test test/account-security.mjs && node test/console-security-operations.mjs",
+    "test": "npm run check && npm run check:database && npm run check:crs && npm run check:accounts && npm run check:auth && npm run check:proxy",
+    "check:accounts": "node --test test/account-lifecycle.mjs && node test/console-account-lifecycle.mjs",
+    "check:auth": "node --test test/auth.test.mjs",
+    "check:ui": "node test/account-lifecycle-ui.mjs",
+    "pretest": "npm run build"
+  },
+  "keywords": [
+    "chatgpt",
+    "codex",
+    "oauth",
+    "sub2api"
+  ],
+  "author": "poxiao33",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/949n9/auto-login-gpt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/949n9/auto-login-gpt/issues"
+  },
+  "homepage": "https://github.com/949n9/auto-login-gpt#readme",
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "jsdom": "26.1.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tough-cookie": "5.1.2",
+    "vite": "^6.4.2"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="same-origin">
+  <title>登录 · 自动上号器</title>
+  <link rel="preload" href="/login-assets/assets/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/login-assets/login.css">
+  <script src="/login-assets/login.js" defer></script>
+</head>
+<body>
+<main class="login-page">
+  <div class="login-background" aria-hidden="true">
+    <div class="login-bg-base"></div><div class="login-bg-grid"></div>
+    <div class="login-bg-striations"></div><div class="login-bg-grain"></div>
+    <span class="login-watermark">ACCOUNT CONSOLE</span>
+    <svg class="login-topology" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" focusable="false">
+      <g class="login-route-lines">
+        <path
+          class="login-route-line--bundle"
+          d="M0 32c132 0 166 48 270 84 94 32 202 32 370 30 172 0 276-8 410-28 148-22 229-74 329-76m-1379 50c112 0 170 12 274 36 96 22 222 22 366 18 178 0 286 4 426 0 148-4 262-30 313-32m-1379 42c132 0 184-12 294-14 126-2 216 4 346 4 176 0 282 22 426 38 166 20 280 36 313 36m-1379 4c160 0 202-34 316-60 108-24 204-18 324-18 140 0 262 12 378 26 102 12 216 22 361 16"
+          transform="translate(286 382)"
+        />
+        <path
+          class="login-route-line--stream"
+          d="M1030 48c-170-30-320-20-478 30-160 52-292 48-552 10m870-26c-150 10-242 42-358 64-126 24-260 28-440 16"
+          transform="translate(510 316)"
+        />
+        <path
+          class="login-route-line--audit"
+          d="M980 24c-196 54-352 66-512 34-138-28-294-16-468 30m690-24c-134 26-262 30-380 12-106-16-194-8-276 20"
+          transform="translate(440 704)"
+        />
+      </g>
+
+      <g class="login-particle-tracks">
+        <path
+          id="login-track-a"
+          d="M286 414 C418 414 452 462 556 498 C650 530 758 530 926 528 C1098 528 1202 520 1336 500 C1484 478 1565 426 1665 424"
+        />
+        <path
+          id="login-track-b"
+          d="M286 474 C398 474 456 486 560 510 C656 532 782 532 926 528 C1104 528 1212 532 1352 528 C1500 524 1614 498 1665 496"
+        />
+        <path
+          id="login-track-c"
+          d="M286 538 C418 538 470 526 580 524 C706 522 796 528 926 528 C1102 528 1208 550 1352 566 C1518 586 1632 602 1665 602"
+        />
+        <path
+          id="login-track-d"
+          d="M286 606 C446 606 488 572 602 546 C710 522 806 528 926 528 C1066 528 1188 540 1304 554 C1406 566 1520 576 1665 570"
+        />
+        <path id="login-track-return" d="M1540 364 C1370 334 1220 344 1062 394 C902 446 770 442 510 404" />
+      </g>
+
+      <g class="login-particle">
+        <circle r="3.2" />
+        <animateMotion dur="7.2s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#login-track-a" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0;1;1;0"
+          keyTimes="0;0.12;0.82;1"
+          dur="7.2s"
+          repeatCount="indefinite"
+        />
+      </g>
+      <g class="login-particle">
+        <circle r="2.8" />
+        <animateMotion dur="8.8s" begin="-2.1s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#login-track-b" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0;0.82;0.82;0"
+          keyTimes="0;0.14;0.82;1"
+          dur="8.8s"
+          begin="-2.1s"
+          repeatCount="indefinite"
+        />
+      </g>
+      <g class="login-particle">
+        <circle r="2.6" />
+        <animateMotion dur="9.4s" begin="-4.4s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#login-track-c" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0;0.78;0.78;0"
+          keyTimes="0;0.13;0.84;1"
+          dur="9.4s"
+          begin="-4.4s"
+          repeatCount="indefinite"
+        />
+      </g>
+      <g class="login-particle">
+        <circle r="2.5" />
+        <animateMotion dur="10.8s" begin="-5.2s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#login-track-d" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0;0.7;0.7;0"
+          keyTimes="0;0.16;0.8;1"
+          dur="10.8s"
+          begin="-5.2s"
+          repeatCount="indefinite"
+        />
+      </g>
+      <g class="login-particle">
+        <circle r="2.3" />
+        <animateMotion dur="11.4s" begin="-1.8s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#login-track-return" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0;0.55;0.55;0"
+          keyTimes="0;0.16;0.78;1"
+          dur="11.4s"
+          begin="-1.8s"
+          repeatCount="indefinite"
+        />
+      </g>
+
+      <g class="login-packets login-packets--semantic">
+        <circle cx="420" cy="410" r="3" />
+        <circle cx="626" cy="524" r="3" />
+        <circle cx="812" cy="524" r="3" />
+        <circle cx="1262" cy="502" r="3" />
+        <circle cx="1540" cy="422" r="3" />
+        <circle cx="614" cy="459" r="2.5" />
+        <circle cx="780" cy="528" r="2.5" />
+        <circle cx="982" cy="528" r="2.5" />
+        <circle cx="1390" cy="496" r="2.5" />
+      </g>
+    </svg>
+  </div>
+  <div class="page-controls">
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换主题" title="切换明暗主题">
+      <span class="theme-knob"></span><svg class="icon" aria-hidden="true" focusable="false"><use href="/login-assets/assets/icons.svg#sun"></use></svg> <svg class="icon" aria-hidden="true" focusable="false"><use href="/login-assets/assets/icons.svg#moon"></use></svg>
+    </button>
+  </div>
+  <section class="login-layout" aria-label="自动上号器登录">
+    <div class="panel-wrap">
+      <div class="login-panel">
+        <div class="login-form-line" aria-hidden="true"></div>
+        <header class="brand-header">
+          <svg class="brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="48 48 416 416" focusable="false" aria-hidden="true">
+    <defs>
+      <filter id="brand-noise" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="1.7" numOctaves="2" seed="31" result="noise" />
+        <feColorMatrix
+          in="noise"
+          type="matrix"
+          values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.56 2.56 2.56 0 -4.76"
+          result="speckle"
+        />
+        <feComposite operator="in" in="SourceGraphic" in2="speckle" />
+      </filter>
+      <filter id="brand-worn" x="-12%" y="-12%" width="124%" height="124%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="41" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" />
+      </filter>
+      <radialGradient id="brand-mist" cx="0.5" cy="0.45" r="0.75">
+        <stop offset="0" stop-color="currentColor" stop-opacity="0.1" />
+        <stop offset="0.55" stop-color="currentColor" stop-opacity="0.045" />
+        <stop offset="1" stop-color="currentColor" stop-opacity="0.012" />
+      </radialGradient>
+    </defs>
+
+    <rect fill="var(--z-brand-mark-bg)" x="48" y="48" width="416" height="416" rx="88" />
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="36">
+      <path d="M156 307A112 112 0 0 1 307 156" />
+      <path d="M356 205A112 112 0 0 1 205 356" />
+    </g>
+    <path d="m407 105-119 153-183 149 124-157Z" fill="currentColor" />
+
+    <g filter="url(#brand-worn)" fill="none" stroke="currentColor" stroke-linecap="square">
+      <path d="M92 170 136 148" stroke-width="1" opacity="0.38" />
+      <path d="M98 178 142 156" stroke-width="0.5" opacity="0.3" />
+      <path d="M308 398 346 378" stroke-width="0.9" opacity="0.36" />
+      <path d="M314 406 352 386" stroke-width="0.5" opacity="0.3" />
+      <path d="M364 132 398 118" stroke-width="0.9" opacity="0.38" />
+      <path d="M402 118 410 126" stroke-width="0.5" opacity="0.28" />
+      <path d="M108 350 142 334" stroke-width="1" opacity="0.4" />
+      <path d="M158 238 190 226" stroke-width="0.8" opacity="0.34" />
+      <path d="M296 292 320 280" stroke-width="0.7" opacity="0.3" />
+      <path d="M126 118 136 110" stroke-width="0.6" opacity="0.26" />
+      <path d="M400 96 410 88" stroke-width="0.6" opacity="0.24" />
+    </g>
+    <g filter="url(#brand-worn)" fill="currentColor">
+      <path
+        d="M98 176 104 173 108 175 114 170 118 173 124 167 130 170 136 164 142 167 148 161 154 164 160 158Z"
+        opacity="0.34"
+      />
+      <path d="M314 395 320 392 324 394 330 389 336 392 342 386 348 389 354 383Z" opacity="0.3" />
+    </g>
+
+    <rect
+     
+      x="48"
+      y="48"
+      width="416"
+      height="416"
+      rx="88"
+      fill="currentColor"
+      filter="url(#brand-noise)"
+      opacity="0.08"
+    />
+    <rect x="48" y="48" width="416" height="416" rx="88" fill="url(#brand-mist)" />
+  </svg>
+          <div class="brand-name"><strong>自动上号器</strong><span>ACCOUNT CONSOLE</span></div>
+          <svg class="brand-shield" aria-hidden="true" focusable="false"><use href="/login-assets/assets/icons.svg#shield"></use></svg>
+        </header>
+        <div class="login-heading">
+          <h1 id="login-title">欢迎回来</h1>
+          <p id="login-description">登录您的账号，继续使用控制台。</p>
+        </div>
+        <p id="login-error" class="login-error" role="alert" hidden></p>
+        <form id="login-form" method="post" action="/auth/login" aria-labelledby="login-title">
+          <div class="field-group">
+            <label for="username">账号</label>
+            <div class="input-wrap"><svg class="icon" aria-hidden="true" focusable="false"><use href="/login-assets/assets/icons.svg#mail"></use></svg>
+              <input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="输入账号" required maxlength="256">
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="password">密码</label>
+            <div class="input-wrap"><svg class="icon" aria-hidden="true" focusable="false"><use href="/login-assets/assets/icons.svg#key"></use></svg>
+              <input id="password" name="password" type="password" autocomplete="current-password" placeholder="输入密码" required maxlength="4096">
+              <button id="password-toggle" class="password-toggle" type="button" aria-label="显示密码" aria-pressed="false" aria-controls="password"><svg class="icon eye-visible" aria-hidden="true" focusable="false"><use href="/login-assets/assets/icons.svg#eye"></use></svg> <svg class="icon eye-hidden" aria-hidden="true" focusable="false"><use href="/login-assets/assets/icons.svg#eye-off"></use></svg></button>
+            </div>
+          </div>
+          <label class="remember-choice"><input name="remember" type="checkbox" value="on" checked><span>保持登录</span></label>
+          <button id="login-submit" class="primary-button" type="submit"><span>登录</span><svg class="icon" aria-hidden="true" focusable="false"><use href="/login-assets/assets/icons.svg#arrow"></use></svg></button>
+        </form>
+        <div id="authenticated-panel" class="authenticated-panel" hidden>
+          <a class="primary-button" href="/">进入控制台 <svg class="icon" aria-hidden="true" focusable="false"><use href="/login-assets/assets/icons.svg#arrow"></use></svg></a>
+          <form id="logout-form" method="post" action="/auth/logout"><button class="secondary-button" type="submit">退出登录</button></form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

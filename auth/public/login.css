@@ -1,0 +1,1114 @@
+/* Theme tokens generated from the deployed CPR @codex-proxy/ui v0.11.0. */
+:root {color-scheme:light;
+  --z-color-bg-layout: #F6F8FB;
+  --z-color-bg-container: #FFFFFF;
+  --z-color-bg-elevated: #FFFFFF;
+  --z-color-bg-spotlight: #111827;
+  --z-color-bg-mask: #0E17264D;
+  --z-color-bg-text-hover: #F1F5F9;
+  --z-color-bg-text-active: #E9EEF5;
+  --z-color-bg-container-disabled: #F1F5F9;
+  --z-color-fill-secondary: #E9EEF5;
+  --z-color-fill-tertiary: #F1F5F9;
+  --z-color-fill-quaternary: #F6F8FB;
+  --z-color-border: #D8E0EA;
+  --z-color-border-secondary: #E2E8F0;
+  --z-color-split: #D8E0EA6B;
+  --z-color-text: #0E1726;
+  --z-color-text-heading: #111827;
+  --z-color-text-secondary: #414B5A;
+  --z-color-text-tertiary: #535B67;
+  --z-color-text-quaternary: #5F6876;
+  --z-color-text-disabled: #94A3B8;
+  --z-color-shadow: #0E172661;
+  --z-color-fill-alter: #F6F8FB;
+  --z-color-primary-container: #F0F4FE;
+  --z-color-primary-container-hover: #EEF3FF;
+  --z-color-primary-border: #8493B9;
+  --z-color-primary-border-hover: #8593B5;
+  --z-color-primary-hover: #85A9FF;
+  --z-color-primary: #5983F4;
+  --z-color-primary-active: #4061CF;
+  --z-color-primary-text-hover: #5C75B0;
+  --z-color-primary-text: #4D71D2;
+  --z-color-primary-on-container: #4261B5;
+  --z-color-primary-text-active: #4061CF;
+  --z-color-text-light-solid: #FFFFFF;
+  --z-color-link-hover: #5C75B0;
+  --z-color-link: #4D71D2;
+  --z-color-link-active: #4061CF;
+  --z-button-secondary-bg: #587EC113;
+  --z-button-secondary-hover-bg: #587EC11B;
+  --z-button-secondary-active-bg: #587EC124;
+  --z-icon-button-secondary-bg: #587EC113;
+  --z-icon-button-secondary-hover-bg: #587EC11B;
+  --z-icon-button-secondary-active-bg: #587EC124;
+  --z-input-hover-bg: #FFFFFF;
+  --z-input-active-bg: #FFFFFF;
+  --z-input-error-active-bg: #FEF0F0;
+  --z-input-shadow: none;
+  --z-input-hover-shadow: 0 0 0 3px #5983F429;
+  --z-input-active-shadow: 0 0 0 3px #5983F429;
+  --z-input-error-active-shadow: 0 0 0 3px #EF44442E;
+  --z-table-header-bg: #EFF3F9;
+  --z-table-row-bg: #FFFFFF;
+  --z-table-row-stripe-bg: #F8F9FC;
+  --z-table-row-hover-bg: #F0F3F9;
+  --z-table-row-selected-bg: #F0F4FE;
+  --z-menu-item-selected-bg: #E9EEF5;
+  --z-menu-item-selected-bg-image: none;
+  --z-menu-item-selected-shadow: none;
+  --z-brand-mark-bg: #111827;
+  --z-card-bg: #FFFFFF;
+  --z-card-bg-image: none;
+  --z-modal-bg: #FFFFFF;
+  --z-popover-header-bg: #E9EEF5;
+  --z-progress-remaining-color: #E2E8F0;
+  --z-layout-sider-bg: #FFFFFF;
+  --z-layout-sider-bg-image: none;
+  --z-card-shadow: 0 10px 22px -18px #0E172614;
+  --z-popover-shadow: 0 1px 6px -1px #0E172617, 0 8px 20px -10px #0E172614;
+  --z-layout-sider-shadow: 2px 0 12px -12px #0E172607;
+  --z-scrollbar-thumb-bg: #D2D5DB;
+  --z-scrollbar-thumb-hover-bg: #B8BDC4;
+  --z-input-bg: #587EC113;
+  --z-input-tag-bg: #E5E9F4;
+  --z-switch-unchecked-bg: #D8E0EA;
+  --z-switch-unchecked-color: #414B5A;
+  --z-table-row-selected-hover-bg: #EEF3FF;
+  --z-button-primary-color: #FFFFFF;
+  --z-button-primary-bg: #4D71D2;
+  --z-button-primary-hover-bg: #4768C1;
+  --z-button-primary-active-bg: #415FB0;
+  --z-box-shadow: 0 18px 38px -18px #0E17262B;
+  --z-box-shadow-secondary: 0 10px 22px -18px #0E172614;
+  --z-box-shadow-tertiary: 0 9px 18px -14px #0E172616;
+  --z-font-size-xs: 11px;
+  --z-font-size-sm: 12px;
+  --z-font-size: 13px;
+  --z-font-size-lg: 14px;
+  --z-font-size-xl: 15px;
+  --z-line-height-xs: 16px;
+  --z-line-height-sm: 18px;
+  --z-line-height: 20px;
+  --z-line-height-lg: 22px;
+  --z-line-height-xl: 24px;
+  --z-size-unit: 4px;
+  --z-size-step: 4px;
+  --z-control-height-sm: 32px;
+  --z-control-height: 38px;
+  --z-control-height-lg: 44px;
+  --z-table-row-height: 60px;
+  --z-table-row-height-sm: 40px;
+  --z-border-radius-sm: 6px;
+  --z-border-radius: 8px;
+  --z-border-radius-lg: 12px;
+  --z-card-border-radius: 18px;
+  --z-layout-sider-border-radius: 0px;
+  --z-color-blue-container: #F2F5FE;
+  --z-color-blue-container-strong: #DAE4FD;
+  --z-color-blue-border: #8894B5;
+  --z-color-blue-solid: #5983F4;
+  --z-color-blue-text: #4061CF;
+  --z-color-blue-on-container: #3E5EC9;
+  --z-color-cyan-container: #ECFAFA;
+  --z-color-cyan-container-strong: #CBF2F2;
+  --z-color-cyan-border: #6D9D9D;
+  --z-color-cyan-solid: #13C2C2;
+  --z-color-cyan-text: #078388;
+  --z-color-cyan-on-container: #06767A;
+  --z-color-green-container: #ECF9F5;
+  --z-color-green-container-strong: #CBF0E3;
+  --z-color-green-border: #6E9D8D;
+  --z-color-green-solid: #12B981;
+  --z-color-green-text: #068760;
+  --z-color-green-on-container: #067655;
+  --z-color-orange-container: #FEF7EB;
+  --z-color-orange-container-strong: #FDEAC9;
+  --z-color-orange-border: #A89169;
+  --z-color-orange-solid: #F59E0B;
+  --z-color-orange-text: #AA6600;
+  --z-color-orange-on-container: #995C00;
+  --z-color-purple-container: #F4EEFB;
+  --z-color-purple-container-strong: #E0D1F5;
+  --z-color-purple-border: #A18BC0;
+  --z-color-purple-solid: #722ED1;
+  --z-color-purple-text: #531DAB;
+  --z-color-purple-on-container: #531DAB;
+  --z-color-red-container: #FEF0F0;
+  --z-color-red-container-strong: #FBD6D6;
+  --z-color-red-border: #BB8787;
+  --z-color-red-solid: #EF4444;
+  --z-color-red-text: #C92E34;
+  --z-color-red-on-container: #B92A30;
+  --z-control-item-bg-active: #F0F4FE;
+  --z-control-item-bg-active-hover: #EEF3FF;
+  --z-control-outline: #8493B9;
+  --z-color-info-container: #F2F5FE;
+  --z-color-info-container-hover: #F0F5FF;
+  --z-color-info-container-active: #DDE3F6;
+  --z-color-info-border: #8894B5;
+  --z-color-info-border-hover: #8894B3;
+  --z-color-info-hover: #7493DE;
+  --z-color-info: #5983F4;
+  --z-color-info-active: #4061CF;
+  --z-color-info-text-hover: #506599;
+  --z-color-info-text: #3F5FCB;
+  --z-color-info-on-container: #4261B5;
+  --z-color-info-text-active: #3F5FCB;
+  --z-color-success-container: #ECF9F5;
+  --z-color-success-container-hover: #E7F8F2;
+  --z-color-success-container-active: #D2ECE4;
+  --z-color-success-border: #6E9D8D;
+  --z-color-success-border-hover: #6C9F8C;
+  --z-color-success-hover: #2CA77A;
+  --z-color-success: #12B981;
+  --z-color-success-active: #07946A;
+  --z-color-success-text-hover: #1F7556;
+  --z-color-success-text: #067655;
+  --z-color-success-on-container: #0C7653;
+  --z-color-success-text-active: #067655;
+  --z-color-warning-container: #FEF7EB;
+  --z-color-warning-container-hover: #FFF7E7;
+  --z-color-warning-container-active: #F6E7D1;
+  --z-color-warning-border: #A89169;
+  --z-color-warning-border-hover: #A89265;
+  --z-color-warning-hover: #BF8C26;
+  --z-color-warning: #F59E0B;
+  --z-color-warning-active: #CF7C00;
+  --z-color-warning-text-hover: #85611B;
+  --z-color-warning-text: #955900;
+  --z-color-warning-on-container: #915D06;
+  --z-color-warning-text-active: #955900;
+  --z-color-error-container: #FEF0F0;
+  --z-color-error-container-hover: #FFEEEE;
+  --z-color-error-container-active: #F5D9DA;
+  --z-color-error-border: #BB8787;
+  --z-color-error-border-hover: #B98886;
+  --z-color-error-hover: #ED6D68;
+  --z-color-error: #EF4444;
+  --z-color-error-active: #C92E34;
+  --z-color-error-text-hover: #A44B48;
+  --z-color-error-text: #C32D32;
+  --z-color-error-on-container: #B33333;
+  --z-color-error-text-active: #C32D32;
+  --z-activity-level-0: #F6F8FB;
+  --z-activity-level-1: #BCEBDB;
+  --z-activity-level-2: #88DCC0;
+  --z-activity-level-3: #53CCA4;
+  --z-activity-level-4: #12B981;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --z-color-bg-layout: #0B111C;
+  --z-color-bg-container: #111A29;
+  --z-color-bg-elevated: #162133;
+  --z-color-bg-spotlight: #050913;
+  --z-color-bg-mask: #030712A6;
+  --z-color-bg-text-hover: #1B2A40;
+  --z-color-bg-text-active: #23354F;
+  --z-color-bg-container-disabled: #182231;
+  --z-color-fill-secondary: #23354F;
+  --z-color-fill-tertiary: #1C2A3D;
+  --z-color-fill-quaternary: #162133;
+  --z-color-border: #29384D;
+  --z-color-border-secondary: #26364C;
+  --z-color-split: #26364C80;
+  --z-color-text: #D8E2EE;
+  --z-color-text-heading: #F5F8FC;
+  --z-color-text-secondary: #BAC4D2;
+  --z-color-text-tertiary: #A3AEBF;
+  --z-color-text-quaternary: #939EAE;
+  --z-color-text-disabled: #53647A;
+  --z-color-shadow: #000000BF;
+  --z-color-fill-alter: #162133;
+  --z-color-primary-container: #1D2C4C;
+  --z-color-primary-container-hover: #35425A;
+  --z-color-primary-border: #4C649F;
+  --z-color-primary-border-hover: #6D81A7;
+  --z-color-primary-hover: #A5C0F4;
+  --z-color-primary: #5983F4;
+  --z-color-primary-active: #4E73D6;
+  --z-color-primary-text-hover: #A5C0F4;
+  --z-color-primary-text: #799BEA;
+  --z-color-primary-on-container: #91ADEE;
+  --z-color-primary-text-active: #5C7ED9;
+  --z-color-text-light-solid: #FFFFFF;
+  --z-color-link-hover: #A5C0F4;
+  --z-color-link: #799BEA;
+  --z-color-link-active: #5C7ED9;
+  --z-button-secondary-bg: #1C2A3D;
+  --z-button-secondary-hover-bg: #23354F;
+  --z-button-secondary-active-bg: #23354F;
+  --z-icon-button-secondary-bg: #111A29;
+  --z-icon-button-secondary-hover-bg: #1B2A40;
+  --z-icon-button-secondary-active-bg: #23354F;
+  --z-menu-item-selected-bg: #1B2A40;
+  --z-menu-item-selected-bg-image: none;
+  --z-menu-item-selected-shadow: none;
+  --z-input-hover-bg: #1D2D43;
+  --z-input-active-bg: #1D2D43;
+  --z-input-error-active-bg: #33202D;
+  --z-brand-mark-bg: #162133;
+  --z-card-bg: #111A29;
+  --z-card-bg-image: none;
+  --z-modal-bg: #111A29;
+  --z-popover-header-bg: #1C2A3D;
+  --z-table-header-bg: #1C2A3D;
+  --z-table-row-bg: #111A29;
+  --z-table-row-stripe-bg: #162133;
+  --z-table-row-hover-bg: #1B2A40;
+  --z-table-row-selected-bg: #1D2C4C;
+  --z-progress-remaining-color: #243449;
+  --z-layout-sider-bg: #111A29;
+  --z-layout-sider-bg-image: none;
+  --z-card-shadow: 0 18px 34px -26px #000000A3;
+  --z-popover-shadow: 0 1px 6px -1px #0000004D, 0 10px 22px -11px #00000085;
+  --z-input-shadow: 0 12px 24px -20px #000000A8;
+  --z-input-hover-shadow: 0 0 0 3px #35425A, 0 14px 28px -22px #000000B8;
+  --z-input-active-shadow: 0 0 0 3px #35425A, 0 14px 28px -22px #000000B8;
+  --z-input-error-active-shadow: 0 0 0 3px #CE3E4047;
+  --z-layout-sider-shadow: 2px 0 18px -14px #000000B8;
+  --z-scrollbar-thumb-bg: #3E4D61;
+  --z-scrollbar-thumb-hover-bg: #526174;
+  --z-input-bg: #182437;
+  --z-input-tag-bg: #151F30;
+  --z-switch-unchecked-bg: #29384D;
+  --z-switch-unchecked-color: #BAC4D2;
+  --z-table-row-selected-hover-bg: #243352;
+  --z-button-primary-color: #FFFFFF;
+  --z-button-primary-bg: #4D71D2;
+  --z-button-primary-hover-bg: #4768C1;
+  --z-button-primary-active-bg: #415FB0;
+  --z-box-shadow: 0 24px 52px -26px #000000D1;
+  --z-box-shadow-secondary: 0 18px 34px -26px #000000A3;
+  --z-box-shadow-tertiary: 0 12px 24px -20px #000000A8;
+  --z-font-size-xs: 11px;
+  --z-font-size-sm: 12px;
+  --z-font-size: 13px;
+  --z-font-size-lg: 14px;
+  --z-font-size-xl: 15px;
+  --z-line-height-xs: 16px;
+  --z-line-height-sm: 18px;
+  --z-line-height: 20px;
+  --z-line-height-lg: 22px;
+  --z-line-height-xl: 24px;
+  --z-size-unit: 4px;
+  --z-size-step: 4px;
+  --z-control-height-sm: 32px;
+  --z-control-height: 38px;
+  --z-control-height-lg: 44px;
+  --z-table-row-height: 60px;
+  --z-table-row-height-sm: 40px;
+  --z-border-radius-sm: 6px;
+  --z-border-radius: 8px;
+  --z-border-radius-lg: 12px;
+  --z-card-border-radius: 18px;
+  --z-layout-sider-border-radius: 0px;
+  --z-color-blue-container: #1C2A48;
+  --z-color-blue-container-strong: #202F53;
+  --z-color-blue-border: #536591;
+  --z-color-blue-solid: #4E73D6;
+  --z-color-blue-text: #A5C0F4;
+  --z-color-blue-on-container: #A5C0F4;
+  --z-color-cyan-container: #113440;
+  --z-color-cyan-container-strong: #113C48;
+  --z-color-cyan-border: #2E7077;
+  --z-color-cyan-solid: #13A9AB;
+  --z-color-cyan-text: #87DEDA;
+  --z-color-cyan-on-container: #87DEDA;
+  --z-color-green-container: #113237;
+  --z-color-green-container-strong: #113A3B;
+  --z-color-green-border: #357167;
+  --z-color-green-solid: #12A174;
+  --z-color-green-text: #8ADBBC;
+  --z-color-green-on-container: #8ADBBC;
+  --z-color-orange-container: #342E25;
+  --z-color-orange-container-strong: #403523;
+  --z-color-orange-border: #7C6339;
+  --z-color-orange-solid: #D38A10;
+  --z-color-orange-text: #F5CD70;
+  --z-color-orange-on-container: #F5CD70;
+  --z-color-purple-container: #201D43;
+  --z-color-purple-container-strong: #251E4B;
+  --z-color-purple-border: #6D5E93;
+  --z-color-purple-solid: #632BB8;
+  --z-color-purple-text: #B182E3;
+  --z-color-purple-on-container: #B182E3;
+  --z-color-red-container: #33202D;
+  --z-color-red-container-strong: #3E232F;
+  --z-color-red-border: #895A61;
+  --z-color-red-solid: #CE3E40;
+  --z-color-red-text: #F39993;
+  --z-color-red-on-container: #F39993;
+  --z-control-item-bg-active: #1D2C4C;
+  --z-control-item-bg-active-hover: #35425A;
+  --z-control-outline: #4C649F;
+  --z-color-info-container: #1C2A48;
+  --z-color-info-container-hover: #35425A;
+  --z-color-info-container-active: #23355D;
+  --z-color-info-border: #536591;
+  --z-color-info-border-hover: #64779B;
+  --z-color-info-hover: #A5C0F4;
+  --z-color-info: #4E73D6;
+  --z-color-info-active: #4E73D6;
+  --z-color-info-text-hover: #A5C0F4;
+  --z-color-info-text: #799BEA;
+  --z-color-info-on-container: #D0DFF9;
+  --z-color-info-text-active: #ECF2FB;
+  --z-color-success-container: #113237;
+  --z-color-success-container-hover: #214445;
+  --z-color-success-container-active: #114340;
+  --z-color-success-border: #357167;
+  --z-color-success-border-hover: #377D6A;
+  --z-color-success-hover: #55CB9D;
+  --z-color-success: #12A174;
+  --z-color-success-active: #12A174;
+  --z-color-success-text-hover: #55CB9D;
+  --z-color-success-text: #31B687;
+  --z-color-success-on-container: #7FDAB4;
+  --z-color-success-text-active: #ACE9CD;
+  --z-color-warning-container: #342E25;
+  --z-color-warning-container-hover: #474335;
+  --z-color-warning-container-active: #4B3C22;
+  --z-color-warning-border: #7C6339;
+  --z-color-warning-border-hover: #907A44;
+  --z-color-warning-hover: #F3C559;
+  --z-color-warning: #D38A10;
+  --z-color-warning-active: #D38A10;
+  --z-color-warning-text-hover: #F3C559;
+  --z-color-warning-text: #E7AB32;
+  --z-color-warning-on-container: #F8D882;
+  --z-color-warning-text-active: #FAE8AA;
+  --z-color-error-container: #33202D;
+  --z-color-error-container-hover: #473842;
+  --z-color-error-container-active: #4A2530;
+  --z-color-error-border: #895A61;
+  --z-color-error-border-hover: #906164;
+  --z-color-error-hover: #F39993;
+  --z-color-error: #CE3E40;
+  --z-color-error-active: #CE3E40;
+  --z-color-error-text-hover: #F39993;
+  --z-color-error-text: #E87D7A;
+  --z-color-error-on-container: #F8C3BD;
+  --z-color-error-text-active: #FAE9E7;
+  --z-activity-level-0: #162133;
+  --z-activity-level-1: #114A44;
+  --z-activity-level-2: #116553;
+  --z-activity-level-3: #128062;
+  --z-activity-level-4: #12A174;
+}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --z-color-bg-layout: #0B111C;
+  --z-color-bg-container: #111A29;
+  --z-color-bg-elevated: #162133;
+  --z-color-bg-spotlight: #050913;
+  --z-color-bg-mask: #030712A6;
+  --z-color-bg-text-hover: #1B2A40;
+  --z-color-bg-text-active: #23354F;
+  --z-color-bg-container-disabled: #182231;
+  --z-color-fill-secondary: #23354F;
+  --z-color-fill-tertiary: #1C2A3D;
+  --z-color-fill-quaternary: #162133;
+  --z-color-border: #29384D;
+  --z-color-border-secondary: #26364C;
+  --z-color-split: #26364C80;
+  --z-color-text: #D8E2EE;
+  --z-color-text-heading: #F5F8FC;
+  --z-color-text-secondary: #BAC4D2;
+  --z-color-text-tertiary: #A3AEBF;
+  --z-color-text-quaternary: #939EAE;
+  --z-color-text-disabled: #53647A;
+  --z-color-shadow: #000000BF;
+  --z-color-fill-alter: #162133;
+  --z-color-primary-container: #1D2C4C;
+  --z-color-primary-container-hover: #35425A;
+  --z-color-primary-border: #4C649F;
+  --z-color-primary-border-hover: #6D81A7;
+  --z-color-primary-hover: #A5C0F4;
+  --z-color-primary: #5983F4;
+  --z-color-primary-active: #4E73D6;
+  --z-color-primary-text-hover: #A5C0F4;
+  --z-color-primary-text: #799BEA;
+  --z-color-primary-on-container: #91ADEE;
+  --z-color-primary-text-active: #5C7ED9;
+  --z-color-text-light-solid: #FFFFFF;
+  --z-color-link-hover: #A5C0F4;
+  --z-color-link: #799BEA;
+  --z-color-link-active: #5C7ED9;
+  --z-button-secondary-bg: #1C2A3D;
+  --z-button-secondary-hover-bg: #23354F;
+  --z-button-secondary-active-bg: #23354F;
+  --z-icon-button-secondary-bg: #111A29;
+  --z-icon-button-secondary-hover-bg: #1B2A40;
+  --z-icon-button-secondary-active-bg: #23354F;
+  --z-menu-item-selected-bg: #1B2A40;
+  --z-menu-item-selected-bg-image: none;
+  --z-menu-item-selected-shadow: none;
+  --z-input-hover-bg: #1D2D43;
+  --z-input-active-bg: #1D2D43;
+  --z-input-error-active-bg: #33202D;
+  --z-brand-mark-bg: #162133;
+  --z-card-bg: #111A29;
+  --z-card-bg-image: none;
+  --z-modal-bg: #111A29;
+  --z-popover-header-bg: #1C2A3D;
+  --z-table-header-bg: #1C2A3D;
+  --z-table-row-bg: #111A29;
+  --z-table-row-stripe-bg: #162133;
+  --z-table-row-hover-bg: #1B2A40;
+  --z-table-row-selected-bg: #1D2C4C;
+  --z-progress-remaining-color: #243449;
+  --z-layout-sider-bg: #111A29;
+  --z-layout-sider-bg-image: none;
+  --z-card-shadow: 0 18px 34px -26px #000000A3;
+  --z-popover-shadow: 0 1px 6px -1px #0000004D, 0 10px 22px -11px #00000085;
+  --z-input-shadow: 0 12px 24px -20px #000000A8;
+  --z-input-hover-shadow: 0 0 0 3px #35425A, 0 14px 28px -22px #000000B8;
+  --z-input-active-shadow: 0 0 0 3px #35425A, 0 14px 28px -22px #000000B8;
+  --z-input-error-active-shadow: 0 0 0 3px #CE3E4047;
+  --z-layout-sider-shadow: 2px 0 18px -14px #000000B8;
+  --z-scrollbar-thumb-bg: #3E4D61;
+  --z-scrollbar-thumb-hover-bg: #526174;
+  --z-input-bg: #182437;
+  --z-input-tag-bg: #151F30;
+  --z-switch-unchecked-bg: #29384D;
+  --z-switch-unchecked-color: #BAC4D2;
+  --z-table-row-selected-hover-bg: #243352;
+  --z-button-primary-color: #FFFFFF;
+  --z-button-primary-bg: #4D71D2;
+  --z-button-primary-hover-bg: #4768C1;
+  --z-button-primary-active-bg: #415FB0;
+  --z-box-shadow: 0 24px 52px -26px #000000D1;
+  --z-box-shadow-secondary: 0 18px 34px -26px #000000A3;
+  --z-box-shadow-tertiary: 0 12px 24px -20px #000000A8;
+  --z-font-size-xs: 11px;
+  --z-font-size-sm: 12px;
+  --z-font-size: 13px;
+  --z-font-size-lg: 14px;
+  --z-font-size-xl: 15px;
+  --z-line-height-xs: 16px;
+  --z-line-height-sm: 18px;
+  --z-line-height: 20px;
+  --z-line-height-lg: 22px;
+  --z-line-height-xl: 24px;
+  --z-size-unit: 4px;
+  --z-size-step: 4px;
+  --z-control-height-sm: 32px;
+  --z-control-height: 38px;
+  --z-control-height-lg: 44px;
+  --z-table-row-height: 60px;
+  --z-table-row-height-sm: 40px;
+  --z-border-radius-sm: 6px;
+  --z-border-radius: 8px;
+  --z-border-radius-lg: 12px;
+  --z-card-border-radius: 18px;
+  --z-layout-sider-border-radius: 0px;
+  --z-color-blue-container: #1C2A48;
+  --z-color-blue-container-strong: #202F53;
+  --z-color-blue-border: #536591;
+  --z-color-blue-solid: #4E73D6;
+  --z-color-blue-text: #A5C0F4;
+  --z-color-blue-on-container: #A5C0F4;
+  --z-color-cyan-container: #113440;
+  --z-color-cyan-container-strong: #113C48;
+  --z-color-cyan-border: #2E7077;
+  --z-color-cyan-solid: #13A9AB;
+  --z-color-cyan-text: #87DEDA;
+  --z-color-cyan-on-container: #87DEDA;
+  --z-color-green-container: #113237;
+  --z-color-green-container-strong: #113A3B;
+  --z-color-green-border: #357167;
+  --z-color-green-solid: #12A174;
+  --z-color-green-text: #8ADBBC;
+  --z-color-green-on-container: #8ADBBC;
+  --z-color-orange-container: #342E25;
+  --z-color-orange-container-strong: #403523;
+  --z-color-orange-border: #7C6339;
+  --z-color-orange-solid: #D38A10;
+  --z-color-orange-text: #F5CD70;
+  --z-color-orange-on-container: #F5CD70;
+  --z-color-purple-container: #201D43;
+  --z-color-purple-container-strong: #251E4B;
+  --z-color-purple-border: #6D5E93;
+  --z-color-purple-solid: #632BB8;
+  --z-color-purple-text: #B182E3;
+  --z-color-purple-on-container: #B182E3;
+  --z-color-red-container: #33202D;
+  --z-color-red-container-strong: #3E232F;
+  --z-color-red-border: #895A61;
+  --z-color-red-solid: #CE3E40;
+  --z-color-red-text: #F39993;
+  --z-color-red-on-container: #F39993;
+  --z-control-item-bg-active: #1D2C4C;
+  --z-control-item-bg-active-hover: #35425A;
+  --z-control-outline: #4C649F;
+  --z-color-info-container: #1C2A48;
+  --z-color-info-container-hover: #35425A;
+  --z-color-info-container-active: #23355D;
+  --z-color-info-border: #536591;
+  --z-color-info-border-hover: #64779B;
+  --z-color-info-hover: #A5C0F4;
+  --z-color-info: #4E73D6;
+  --z-color-info-active: #4E73D6;
+  --z-color-info-text-hover: #A5C0F4;
+  --z-color-info-text: #799BEA;
+  --z-color-info-on-container: #D0DFF9;
+  --z-color-info-text-active: #ECF2FB;
+  --z-color-success-container: #113237;
+  --z-color-success-container-hover: #214445;
+  --z-color-success-container-active: #114340;
+  --z-color-success-border: #357167;
+  --z-color-success-border-hover: #377D6A;
+  --z-color-success-hover: #55CB9D;
+  --z-color-success: #12A174;
+  --z-color-success-active: #12A174;
+  --z-color-success-text-hover: #55CB9D;
+  --z-color-success-text: #31B687;
+  --z-color-success-on-container: #7FDAB4;
+  --z-color-success-text-active: #ACE9CD;
+  --z-color-warning-container: #342E25;
+  --z-color-warning-container-hover: #474335;
+  --z-color-warning-container-active: #4B3C22;
+  --z-color-warning-border: #7C6339;
+  --z-color-warning-border-hover: #907A44;
+  --z-color-warning-hover: #F3C559;
+  --z-color-warning: #D38A10;
+  --z-color-warning-active: #D38A10;
+  --z-color-warning-text-hover: #F3C559;
+  --z-color-warning-text: #E7AB32;
+  --z-color-warning-on-container: #F8D882;
+  --z-color-warning-text-active: #FAE8AA;
+  --z-color-error-container: #33202D;
+  --z-color-error-container-hover: #473842;
+  --z-color-error-container-active: #4A2530;
+  --z-color-error-border: #895A61;
+  --z-color-error-border-hover: #906164;
+  --z-color-error-hover: #F39993;
+  --z-color-error: #CE3E40;
+  --z-color-error-active: #CE3E40;
+  --z-color-error-text-hover: #F39993;
+  --z-color-error-text: #E87D7A;
+  --z-color-error-on-container: #F8C3BD;
+  --z-color-error-text-active: #FAE9E7;
+  --z-activity-level-0: #162133;
+  --z-activity-level-1: #114A44;
+  --z-activity-level-2: #116553;
+  --z-activity-level-3: #128062;
+  --z-activity-level-4: #12A174;
+}
+
+/* Login visual mappings and route SVG styling retained from CPR. */
+
+.login-page {
+  --z-login-page-bg-start: color-mix(in srgb, var(--z-color-bg-layout) 82%, var(--z-color-white));
+  --z-login-page-bg-middle: color-mix(in srgb, var(--z-color-bg-layout) 72%, var(--z-control-item-bg-active));
+  --z-login-page-bg-end: color-mix(in srgb, var(--z-color-fill-tertiary) 78%, var(--z-control-item-bg-active));
+  --z-login-canvas-bg-start: var(--z-color-bg-container);
+  --z-login-canvas-bg-middle: color-mix(in srgb, var(--z-color-bg-layout) 70%, var(--z-color-white));
+  --z-login-canvas-bg-end: color-mix(in srgb, var(--z-color-fill-tertiary) 78%, var(--z-control-item-bg-active));
+  --z-login-edge-color-middle: color-mix(in srgb, var(--z-color-border) 55%, transparent);
+  --z-login-edge-color-end: color-mix(in srgb, var(--z-color-text-secondary) 32%, transparent);
+  --z-login-grid-color: color-mix(in srgb, var(--z-color-text-secondary) 5%, transparent);
+  --z-login-striation-color: color-mix(in srgb, var(--z-color-text-secondary) 18%, transparent);
+  --z-login-grain-color: color-mix(in srgb, var(--z-color-text-secondary) 13%, transparent);
+  --z-login-grain-primary-color: color-mix(in srgb, var(--z-color-primary-text) 11%, transparent);
+  --z-login-grain-secondary-color: color-mix(in srgb, var(--z-color-text-tertiary) 9%, transparent);
+  --z-login-route-bundle-color: color-mix(in srgb, var(--z-color-text-secondary) 20%, transparent);
+  --z-login-route-stream-color: color-mix(in srgb, var(--z-color-primary-text) 17%, transparent);
+  --z-login-route-audit-color: color-mix(in srgb, var(--z-color-text-tertiary) 18%, transparent);
+  --z-login-semantic-color: color-mix(in srgb, var(--z-color-primary-text) 26%, transparent);
+  --z-login-particle-color: var(--z-color-primary-text);
+  --z-login-particle-glow-color: color-mix(in srgb, var(--z-color-primary-text) 62%, transparent);
+  --z-login-watermark-color: color-mix(in srgb, var(--z-color-text) 55%, transparent);
+  --z-login-stack-text-color: color-mix(in srgb, var(--z-color-text) 84%, transparent);
+  --z-login-stack-bg: color-mix(in srgb, var(--z-color-bg-container) 72%, transparent);
+  --z-login-stack-dot-color: color-mix(in srgb, var(--z-color-primary-text) 62%, transparent);
+  --z-login-stack-opacity: 0.55;
+  --z-login-stack-upstream-opacity: 0.62;
+  --z-login-cluster-bg: color-mix(in srgb, var(--z-color-bg-container) 72%, transparent);
+  --z-login-cluster-pulse-color: color-mix(in srgb, var(--z-color-primary-text) 66%, transparent);
+  --z-login-cluster-text-color: color-mix(in srgb, var(--z-color-text) 78%, transparent);
+  --z-login-panel-bg-start: color-mix(in srgb, var(--z-color-bg-container) 95%, transparent);
+  --z-login-panel-bg-middle: color-mix(in srgb, var(--z-color-bg-container) 82%, var(--z-control-item-bg-active));
+  --z-login-panel-bg-end: color-mix(in srgb, var(--z-color-fill-tertiary) 78%, var(--z-control-item-bg-active));
+  --z-login-panel-shadow-color: color-mix(in srgb, var(--z-color-text) 20%, transparent);
+  --z-login-panel-line-color: color-mix(in srgb, var(--z-color-primary-border) 54%, transparent);
+  --z-login-logo-color: var(--z-color-primary-text);
+  --z-login-title-color: var(--z-color-text);
+  --z-login-brand-title-color: var(--z-color-text-heading);
+  --z-login-brand-caption-color: var(--z-color-text-secondary);
+  --z-login-description-color: color-mix(in srgb, var(--z-color-text-secondary) 82%, var(--z-color-text));
+  --z-login-label-color: color-mix(in srgb, var(--z-color-text) 84%, var(--z-color-text-secondary));
+  --z-login-input-bg: color-mix(in srgb, var(--z-input-bg) 82%, var(--z-color-bg-container));
+  --z-login-input-hover-bg: color-mix(in srgb, var(--z-input-hover-bg) 86%, var(--z-color-bg-container));
+  --z-login-input-active-bg: var(--z-input-active-bg);
+  --z-login-input-icon-color: var(--z-color-primary-text);
+  --z-login-placeholder-color: var(--z-color-text-secondary);
+  --z-login-error-bg: var(--z-color-error-container);
+  --z-login-error-icon-color: var(--z-color-error);
+  --z-login-error-text-color: var(--z-color-error-text);
+  --z-login-button-shadow-color: color-mix(in srgb, var(--z-color-primary) 30%, transparent);
+  --z-login-footer-color: color-mix(in srgb, var(--z-color-text-secondary) 82%, var(--z-color-text-tertiary));
+  --z-login-toggle-bg: color-mix(in srgb, var(--z-color-fill-tertiary) 90%, var(--z-color-bg-container));
+  --z-login-toggle-bg-hover: var(--z-color-fill-tertiary);
+  --z-login-toggle-sun-color: var(--z-login-logo-color);
+  --z-login-toggle-moon-color: var(--z-color-text-secondary);
+  --z-login-toggle-knob: var(--z-color-bg-container);
+  --z-login-toggle-shadow-color: color-mix(in srgb, var(--z-color-primary-text) 20%, transparent);
+  --z-login-disabled-bg: var(--z-color-bg-container-disabled);
+  --z-login-disabled-text-color: var(--z-color-text-disabled);
+
+  background: linear-gradient(
+    118deg,
+    var(--z-login-page-bg-start),
+    var(--z-login-page-bg-middle) 52%,
+    var(--z-login-page-bg-end)
+  );
+  isolation: isolate;
+}
+
+html[data-theme='dark'] .login-page {
+  --z-login-page-bg-start: color-mix(in srgb, var(--z-color-bg-layout) 86%, var(--z-color-bg-spotlight));
+  --z-login-page-bg-middle: color-mix(in srgb, var(--z-color-bg-container) 68%, var(--z-color-bg-layout));
+  --z-login-page-bg-end: color-mix(in srgb, var(--z-color-bg-spotlight) 76%, var(--z-color-primary-container));
+  --z-login-canvas-bg-start: color-mix(in srgb, var(--z-color-bg-container) 82%, var(--z-color-fill-tertiary));
+  --z-login-canvas-bg-middle: color-mix(in srgb, var(--z-color-bg-layout) 88%, var(--z-color-bg-container));
+  --z-login-canvas-bg-end: color-mix(in srgb, var(--z-color-bg-spotlight) 88%, var(--z-color-bg-layout));
+  --z-login-edge-color-middle: color-mix(in srgb, var(--z-color-bg-spotlight) 32%, transparent);
+  --z-login-edge-color-end: color-mix(in srgb, var(--z-color-bg-spotlight) 66%, transparent);
+  --z-login-grid-color: color-mix(in srgb, var(--z-color-primary-text) 5%, transparent);
+  --z-login-striation-color: color-mix(in srgb, var(--z-color-primary-text) 5%, transparent);
+  --z-login-grain-color: color-mix(in srgb, var(--z-color-text-secondary) 9%, transparent);
+  --z-login-grain-primary-color: color-mix(in srgb, var(--z-color-primary-text) 7%, transparent);
+  --z-login-grain-secondary-color: color-mix(in srgb, var(--z-color-text-tertiary) 5%, transparent);
+  --z-login-route-bundle-color: color-mix(in srgb, var(--z-color-primary-text) 17%, transparent);
+  --z-login-route-stream-color: color-mix(in srgb, var(--z-color-primary-text) 14%, transparent);
+  --z-login-route-audit-color: color-mix(in srgb, var(--z-color-text-secondary) 12%, transparent);
+  --z-login-semantic-color: color-mix(in srgb, var(--z-color-primary-text) 27%, transparent);
+  --z-login-particle-color: color-mix(in srgb, var(--z-color-primary-text) 72%, var(--z-color-primary));
+  --z-login-particle-glow-color: color-mix(in srgb, var(--z-color-primary-text) 80%, transparent);
+  --z-login-watermark-color: color-mix(in srgb, var(--z-color-primary-text) 40%, transparent);
+  --z-login-stack-text-color: color-mix(in srgb, var(--z-color-text) 80%, transparent);
+  --z-login-stack-bg: color-mix(in srgb, var(--z-color-bg-container) 54%, transparent);
+  --z-login-stack-dot-color: color-mix(in srgb, var(--z-color-primary-text) 72%, transparent);
+  --z-login-stack-opacity: 0.76;
+  --z-login-stack-upstream-opacity: 0.76;
+  --z-login-cluster-bg: color-mix(in srgb, var(--z-color-bg-container) 52%, transparent);
+  --z-login-cluster-pulse-color: color-mix(in srgb, var(--z-color-primary-text) 70%, transparent);
+  --z-login-cluster-text-color: color-mix(in srgb, var(--z-color-text) 66%, transparent);
+  --z-login-panel-bg-start: color-mix(in srgb, var(--z-color-fill-tertiary) 82%, transparent);
+  --z-login-panel-bg-middle: color-mix(in srgb, var(--z-color-bg-container) 86%, transparent);
+  --z-login-panel-bg-end: color-mix(in srgb, var(--z-color-bg-layout) 90%, transparent);
+  --z-login-panel-shadow-color: color-mix(in srgb, var(--z-color-bg-spotlight) 70%, transparent);
+  --z-login-panel-line-color: color-mix(in srgb, var(--z-color-primary-border) 66%, transparent);
+  --z-login-logo-color: var(--z-color-primary-text);
+  --z-login-title-color: var(--z-color-text-heading);
+  --z-login-brand-title-color: var(--z-color-white);
+  --z-login-brand-caption-color: var(--z-color-text-tertiary);
+  --z-login-description-color: color-mix(in srgb, var(--z-color-text-secondary) 82%, var(--z-color-text));
+  --z-login-label-color: color-mix(in srgb, var(--z-color-text) 86%, var(--z-color-white));
+  --z-login-input-bg: color-mix(in srgb, var(--z-color-bg-spotlight) 58%, transparent);
+  --z-login-input-hover-bg: color-mix(in srgb, var(--z-color-fill-tertiary) 62%, transparent);
+  --z-login-input-active-bg: color-mix(in srgb, var(--z-color-fill-tertiary) 72%, transparent);
+  --z-login-input-icon-color: var(--z-color-primary-text);
+  --z-login-placeholder-color: var(--z-color-text-quaternary);
+  --z-login-button-shadow-color: color-mix(in srgb, var(--z-color-primary) 30%, transparent);
+  --z-login-footer-color: color-mix(in srgb, var(--z-color-text-secondary) 80%, var(--z-color-text-quaternary));
+  --z-login-toggle-bg: var(--z-color-fill-tertiary);
+  --z-login-toggle-bg-hover: color-mix(in srgb, var(--z-color-fill-tertiary) 94%, var(--z-color-white));
+  --z-login-toggle-sun-color: var(--z-color-text-tertiary);
+  --z-login-toggle-moon-color: var(--z-color-white);
+  --z-login-toggle-knob: var(--z-color-primary-hover);
+  --z-login-toggle-shadow-color: color-mix(in srgb, var(--z-color-primary-text) 30%, transparent);
+}
+
+@media (prefers-color-scheme: dark) { html:not([data-theme="light"]) .login-page {
+  --z-login-page-bg-start: color-mix(in srgb, var(--z-color-bg-layout) 86%, var(--z-color-bg-spotlight));
+  --z-login-page-bg-middle: color-mix(in srgb, var(--z-color-bg-container) 68%, var(--z-color-bg-layout));
+  --z-login-page-bg-end: color-mix(in srgb, var(--z-color-bg-spotlight) 76%, var(--z-color-primary-container));
+  --z-login-canvas-bg-start: color-mix(in srgb, var(--z-color-bg-container) 82%, var(--z-color-fill-tertiary));
+  --z-login-canvas-bg-middle: color-mix(in srgb, var(--z-color-bg-layout) 88%, var(--z-color-bg-container));
+  --z-login-canvas-bg-end: color-mix(in srgb, var(--z-color-bg-spotlight) 88%, var(--z-color-bg-layout));
+  --z-login-edge-color-middle: color-mix(in srgb, var(--z-color-bg-spotlight) 32%, transparent);
+  --z-login-edge-color-end: color-mix(in srgb, var(--z-color-bg-spotlight) 66%, transparent);
+  --z-login-grid-color: color-mix(in srgb, var(--z-color-primary-text) 5%, transparent);
+  --z-login-striation-color: color-mix(in srgb, var(--z-color-primary-text) 5%, transparent);
+  --z-login-grain-color: color-mix(in srgb, var(--z-color-text-secondary) 9%, transparent);
+  --z-login-grain-primary-color: color-mix(in srgb, var(--z-color-primary-text) 7%, transparent);
+  --z-login-grain-secondary-color: color-mix(in srgb, var(--z-color-text-tertiary) 5%, transparent);
+  --z-login-route-bundle-color: color-mix(in srgb, var(--z-color-primary-text) 17%, transparent);
+  --z-login-route-stream-color: color-mix(in srgb, var(--z-color-primary-text) 14%, transparent);
+  --z-login-route-audit-color: color-mix(in srgb, var(--z-color-text-secondary) 12%, transparent);
+  --z-login-semantic-color: color-mix(in srgb, var(--z-color-primary-text) 27%, transparent);
+  --z-login-particle-color: color-mix(in srgb, var(--z-color-primary-text) 72%, var(--z-color-primary));
+  --z-login-particle-glow-color: color-mix(in srgb, var(--z-color-primary-text) 80%, transparent);
+  --z-login-watermark-color: color-mix(in srgb, var(--z-color-primary-text) 40%, transparent);
+  --z-login-stack-text-color: color-mix(in srgb, var(--z-color-text) 80%, transparent);
+  --z-login-stack-bg: color-mix(in srgb, var(--z-color-bg-container) 54%, transparent);
+  --z-login-stack-dot-color: color-mix(in srgb, var(--z-color-primary-text) 72%, transparent);
+  --z-login-stack-opacity: 0.76;
+  --z-login-stack-upstream-opacity: 0.76;
+  --z-login-cluster-bg: color-mix(in srgb, var(--z-color-bg-container) 52%, transparent);
+  --z-login-cluster-pulse-color: color-mix(in srgb, var(--z-color-primary-text) 70%, transparent);
+  --z-login-cluster-text-color: color-mix(in srgb, var(--z-color-text) 66%, transparent);
+  --z-login-panel-bg-start: color-mix(in srgb, var(--z-color-fill-tertiary) 82%, transparent);
+  --z-login-panel-bg-middle: color-mix(in srgb, var(--z-color-bg-container) 86%, transparent);
+  --z-login-panel-bg-end: color-mix(in srgb, var(--z-color-bg-layout) 90%, transparent);
+  --z-login-panel-shadow-color: color-mix(in srgb, var(--z-color-bg-spotlight) 70%, transparent);
+  --z-login-panel-line-color: color-mix(in srgb, var(--z-color-primary-border) 66%, transparent);
+  --z-login-logo-color: var(--z-color-primary-text);
+  --z-login-title-color: var(--z-color-text-heading);
+  --z-login-brand-title-color: var(--z-color-white);
+  --z-login-brand-caption-color: var(--z-color-text-tertiary);
+  --z-login-description-color: color-mix(in srgb, var(--z-color-text-secondary) 82%, var(--z-color-text));
+  --z-login-label-color: color-mix(in srgb, var(--z-color-text) 86%, var(--z-color-white));
+  --z-login-input-bg: color-mix(in srgb, var(--z-color-bg-spotlight) 58%, transparent);
+  --z-login-input-hover-bg: color-mix(in srgb, var(--z-color-fill-tertiary) 62%, transparent);
+  --z-login-input-active-bg: color-mix(in srgb, var(--z-color-fill-tertiary) 72%, transparent);
+  --z-login-input-icon-color: var(--z-color-primary-text);
+  --z-login-placeholder-color: var(--z-color-text-quaternary);
+  --z-login-button-shadow-color: color-mix(in srgb, var(--z-color-primary) 30%, transparent);
+  --z-login-footer-color: color-mix(in srgb, var(--z-color-text-secondary) 80%, var(--z-color-text-quaternary));
+  --z-login-toggle-bg: var(--z-color-fill-tertiary);
+  --z-login-toggle-bg-hover: color-mix(in srgb, var(--z-color-fill-tertiary) 94%, var(--z-color-white));
+  --z-login-toggle-sun-color: var(--z-color-text-tertiary);
+  --z-login-toggle-moon-color: var(--z-color-white);
+  --z-login-toggle-knob: var(--z-color-primary-hover);
+  --z-login-toggle-shadow-color: color-mix(in srgb, var(--z-color-primary-text) 30%, transparent);
+}
+}
+
+
+.login-bg-base,
+.login-bg-base::after,
+.login-bg-grid,
+.login-bg-striations,
+.login-bg-grain,
+.login-topology {
+  position: absolute;
+  inset: 0;
+}
+
+.login-bg-base {
+  background:
+    radial-gradient(
+      ellipse 59% 48% at 55% 48%,
+      var(--z-login-canvas-bg-start) 0%,
+      var(--z-login-canvas-bg-middle) 50%,
+      var(--z-login-canvas-bg-end) 100%
+    ),
+    var(--z-login-canvas-bg-end);
+}
+
+.login-bg-base::after {
+  content: '';
+  background: radial-gradient(
+    ellipse 52.5% 44% at 54% 47%,
+    transparent 0%,
+    var(--z-login-edge-color-middle) 72%,
+    var(--z-login-edge-color-end) 100%
+  );
+}
+
+.login-bg-grid {
+  background:
+    repeating-linear-gradient(90deg, var(--z-login-grid-color) 0 1px, transparent 1px 80px),
+    repeating-linear-gradient(180deg, var(--z-login-grid-color) 0 1px, transparent 1px 80px);
+}
+
+.login-bg-striations {
+  background:
+    linear-gradient(var(--z-login-striation-color), var(--z-login-striation-color)) 0 126px / 100% 1px no-repeat,
+    linear-gradient(var(--z-login-striation-color), var(--z-login-striation-color)) 0 214px / 100% 1px no-repeat,
+    linear-gradient(var(--z-login-striation-color), var(--z-login-striation-color)) 0 338px / 100% 1px no-repeat,
+    linear-gradient(var(--z-login-striation-color), var(--z-login-striation-color)) 0 462px / 100% 1px no-repeat,
+    linear-gradient(var(--z-login-striation-color), var(--z-login-striation-color)) 0 586px / 100% 1px no-repeat,
+    linear-gradient(var(--z-login-striation-color), var(--z-login-striation-color)) 0 714px / 100% 1px no-repeat,
+    linear-gradient(var(--z-login-striation-color), var(--z-login-striation-color)) 0 846px / 100% 1px no-repeat,
+    linear-gradient(var(--z-login-striation-color), var(--z-login-striation-color)) 0 982px / 100% 1px no-repeat;
+}
+
+.login-bg-grain {
+  opacity: 0.68;
+  background-image:
+    linear-gradient(var(--z-login-grain-color), var(--z-login-grain-color)) 139px 109px / 3px 2px no-repeat,
+    linear-gradient(var(--z-login-grain-primary-color), var(--z-login-grain-primary-color)) 288px 192px / 1px 1px
+      no-repeat,
+    linear-gradient(var(--z-login-grain-secondary-color), var(--z-login-grain-secondary-color)) 437px 275px / 1px 1px
+      no-repeat,
+    linear-gradient(var(--z-login-grain-color), var(--z-login-grain-color)) 586px 358px / 2px 1px no-repeat,
+    linear-gradient(var(--z-login-grain-primary-color), var(--z-login-grain-primary-color)) 735px 441px / 1px 2px
+      no-repeat,
+    linear-gradient(var(--z-login-grain-secondary-color), var(--z-login-grain-secondary-color)) 884px 524px / 3px 1px
+      no-repeat,
+    linear-gradient(var(--z-login-grain-color), var(--z-login-grain-color)) 1033px 607px / 2px 1px no-repeat,
+    linear-gradient(var(--z-login-grain-primary-color), var(--z-login-grain-primary-color)) 1182px 690px / 1px 1px
+      no-repeat,
+    linear-gradient(var(--z-login-grain-secondary-color), var(--z-login-grain-secondary-color)) 1331px 773px / 1px 2px
+      no-repeat,
+    linear-gradient(var(--z-login-grain-color), var(--z-login-grain-color)) 1480px 856px / 2px 1px no-repeat,
+    linear-gradient(var(--z-login-grain-primary-color), var(--z-login-grain-primary-color)) 1629px 939px / 3px 1px
+      no-repeat,
+    linear-gradient(var(--z-login-grain-secondary-color), var(--z-login-grain-secondary-color)) 1778px 67px / 1px 1px
+      no-repeat;
+}
+
+.login-protocol-stack {
+  position: absolute;
+  display: grid;
+  gap: 8px;
+  width: 156px;
+  color: var(--z-login-stack-text-color);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.login-protocol-stack--ingress {
+  top: 36.1111%;
+  left: 6.5625%;
+  --z-login-stack-item-opacity: var(--z-login-stack-opacity);
+}
+
+.login-protocol-stack--upstream {
+  top: 36.1111%;
+  right: 3.4375%;
+  --z-login-stack-item-opacity: var(--z-login-stack-upstream-opacity);
+}
+
+.login-topology {
+  width: 100%;
+  height: 100%;
+}
+
+.login-topology path,
+.login-topology ellipse,
+.login-topology circle {
+  vector-effect: non-scaling-stroke;
+}
+
+.login-route-lines path {
+  fill: transparent;
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+.login-route-line--bundle {
+  stroke: var(--z-login-route-bundle-color);
+}
+
+.login-route-line--stream {
+  stroke: var(--z-login-route-stream-color);
+}
+
+.login-route-line--audit {
+  stroke: var(--z-login-route-audit-color);
+}
+
+.login-particle-tracks path {
+  fill: transparent;
+  stroke: none;
+}
+
+.login-particle {
+  opacity: 0;
+  filter: drop-shadow(0 0 8px var(--z-login-particle-glow-color));
+}
+
+.login-particle circle {
+  fill: var(--z-login-particle-color);
+}
+
+.login-packets--semantic circle {
+  fill: var(--z-login-semantic-color);
+}
+
+.login-route-cluster--edge {
+  top: 28.2407%;
+  left: 23.4375%;
+}
+
+.login-route-cluster--retry {
+  top: 26.2963%;
+  left: 63.0208%;
+}
+
+.login-route-cluster--audit {
+  top: 69.4444%;
+  left: 23.6979%;
+}
+
+.login-route-cluster--model {
+  top: 68.7037%;
+  left: 66.6667%;
+}
+
+@media (max-width: 720px) {
+  .login-watermark,
+  .login-protocol-stack,
+  .login-route-cluster {
+    opacity: 0.48;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-particle {
+    display: none;
+  }
+}
+
+
+.login-panel {
+  --z-color-bg-container: transparent;
+  --z-color-fill-quaternary: var(--z-login-toggle-bg);
+  --z-color-fill-tertiary: var(--z-login-input-bg);
+  --z-color-text: var(--z-login-title-color);
+  --z-color-text-secondary: var(--z-login-description-color);
+  --z-color-text-quaternary: var(--z-login-placeholder-color);
+  --z-color-error-container: var(--z-login-error-bg);
+  --z-color-error-border: transparent;
+  --z-color-error-text: var(--z-login-error-text-color);
+  --z-color-error: var(--z-login-error-icon-color);
+  --z-color-bg-container-disabled: var(--z-login-disabled-bg);
+  --z-color-text-disabled: var(--z-login-disabled-text-color);
+  --z-input-bg: var(--z-login-input-bg);
+  --z-input-hover-bg: var(--z-login-input-hover-bg);
+  --z-input-active-bg: var(--z-login-input-active-bg);
+  --z-border-radius-sm: 6px;
+  --z-border-radius: 6px;
+  --z-box-shadow-tertiary: none;
+  --z-box-shadow: none;
+  --z-control-height: 43px;
+
+  background:
+    linear-gradient(
+      118deg,
+      var(--z-login-panel-bg-start),
+      var(--z-login-panel-bg-middle) 56%,
+      var(--z-login-panel-bg-end)
+    ),
+    var(--z-login-panel-bg-middle);
+  box-shadow: 0 18px 38px -20px var(--z-login-panel-shadow-color);
+  backdrop-filter: blur(18px) saturate(1.08);
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+}
+
+.login-form-line {
+  position: absolute;
+  top: 0;
+  left: 22px;
+  width: calc(100% - 44px);
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--z-color-transparent),
+    var(--z-login-panel-line-color),
+    var(--z-color-transparent)
+  );
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+html[data-theme='dark'] .login-form-line {
+  opacity: 0.3;
+}
+
+.login-logo {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--z-login-logo-color);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.login-submit {
+  width: 100%;
+  height: 44px;
+  box-shadow: 0 14px 24px -18px var(--z-login-button-shadow-color);
+}
+
+.login-submit:disabled {
+  background: var(--z-login-disabled-bg);
+  box-shadow: none;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-submit {
+    transition: none;
+  }
+}
+
+/* Native-form adaptation of the CPR layout; no framework or remote assets. */
+@font-face{font-family:Inter;src:url('/login-assets/assets/inter-latin-wght-normal.woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url('/login-assets/assets/jetbrains-mono-latin-wght-normal.woff2') format('woff2');font-style:normal;font-weight:100 800;font-display:swap}
+:root{--font-sans:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;--font-mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font-sans);font-size:13px;-webkit-font-smoothing:antialiased}
+button,input,a{-webkit-tap-highlight-color:transparent}
+button,input{font:inherit}
+button{cursor:pointer}
+button:disabled{cursor:wait}
+[hidden]{display:none!important}
+.login-page{position:relative;isolation:isolate;min-height:100vh;min-height:100dvh;overflow:hidden;color:var(--z-login-title-color)}
+.login-background{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.login-watermark{position:absolute;top:9.63%;left:6.15%;font-family:var(--font-mono);font-size:13px;line-height:1;font-weight:500;letter-spacing:.025em;color:var(--z-login-watermark-color);white-space:nowrap}
+.page-controls{position:absolute;top:20px;right:20px;z-index:2}
+.theme-toggle{position:relative;display:grid;grid-template-columns:1fr 1fr;place-items:center;width:80px;height:36px;padding:0;border:0;border-radius:20px;background:var(--z-login-toggle-bg);color:var(--z-login-toggle-sun-color)}
+.theme-toggle:hover{background:var(--z-login-toggle-bg-hover)}
+.theme-toggle .icon{position:relative;z-index:1;width:16px;height:16px}
+.theme-toggle .icon:last-child{color:var(--z-login-toggle-moon-color)}
+.theme-knob{position:absolute;top:4px;left:6px;width:28px;height:28px;border-radius:50%;background:var(--z-login-toggle-knob);transition:transform .2s ease}
+html[data-theme='dark'] .theme-knob{transform:translateX(40px)}
+@media(prefers-color-scheme:dark){html:not([data-theme='light']) .theme-knob{transform:translateX(40px)}}
+.login-layout{display:grid;min-height:100vh;min-height:100dvh;align-items:center;justify-items:center;padding:64px 20px}
+.panel-wrap{width:min(440px,100%)}
+.login-panel{position:relative;display:grid;align-content:start;gap:32px;width:100%;padding:40px 30px 24px;border:1px solid color-mix(in srgb,var(--z-color-border) 46%,transparent);border-radius:8px}
+.brand-header{display:flex;align-items:center;min-width:0;gap:9px}
+.brand-mark{display:block;width:42px;height:42px;flex:none;color:#fff}
+.brand-name{display:grid;min-width:0;gap:5px}
+.brand-name strong{font-size:17px;line-height:1.3;font-weight:600;color:var(--z-login-brand-title-color);letter-spacing:.025em}
+.brand-name span{font-family:var(--font-mono);font-size:10px;line-height:1.2;color:var(--z-login-brand-caption-color);letter-spacing:.015em}
+.brand-shield{width:18px;height:18px;flex:none;margin-left:auto;color:var(--z-login-logo-color);opacity:.8}
+.login-heading{display:grid;gap:16px;min-height:72px;align-content:start}
+h1{margin:0;font-size:34px;line-height:1.02;font-weight:600;letter-spacing:-.04em}
+.login-heading p{margin:0;font-size:14px;line-height:1.45;color:var(--z-login-description-color)}
+#login-form{display:grid;gap:14px}
+.field-group{display:grid;min-width:0;gap:8px}
+.field-group>label{font-size:13px;line-height:1.1;font-weight:650;color:var(--z-login-label-color)}
+.input-wrap{display:flex;align-items:center;gap:8px;height:43px;padding:0 12px;border:1px solid color-mix(in srgb,var(--z-color-border) 60%,transparent);border-radius:6px;background:var(--z-login-input-bg);transition:background .16s,border-color .16s,box-shadow .16s}
+.input-wrap:hover{background:var(--z-login-input-hover-bg);border-color:var(--z-color-primary-border)}
+.input-wrap:focus-within{background:var(--z-login-input-active-bg);border-color:var(--z-color-primary);box-shadow:0 0 0 3px color-mix(in srgb,var(--z-color-primary) 12%,transparent)}
+.icon{width:17px;height:17px;flex:none}
+.input-wrap>.icon{color:var(--z-login-input-icon-color)}
+.input-wrap input{min-width:0;width:100%;height:100%;padding:0;border:0;outline:0;background:transparent;color:var(--z-login-title-color);font-size:13px}
+.input-wrap input::placeholder{color:var(--z-login-placeholder-color)}
+.input-wrap input:-webkit-autofill,.input-wrap input:autofill{background-clip:text!important;-webkit-background-clip:text!important;-webkit-text-fill-color:var(--z-login-title-color)!important;box-shadow:none!important}
+.password-toggle{display:grid;place-items:center;flex:none;width:26px;height:28px;margin-right:-5px;padding:0;border:0;border-radius:4px;background:transparent;color:var(--z-color-text-tertiary)}
+.password-toggle:hover{color:var(--z-login-title-color);background:var(--z-color-fill-tertiary)}
+.password-toggle .icon{width:16px;height:16px}
+.password-toggle .eye-hidden,.password-toggle[aria-pressed='true'] .eye-visible{display:none}
+.password-toggle[aria-pressed='true'] .eye-hidden{display:block}
+.remember-choice{display:flex;align-items:center;gap:8px;width:fit-content;padding:3px 0;margin:1px 0 3px;color:var(--z-login-description-color);font-size:12px;cursor:pointer;user-select:none}
+.remember-choice input{width:15px;height:15px;margin:0;accent-color:var(--z-color-primary);cursor:pointer}
+.primary-button{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:44px;border:1px solid transparent;border-radius:6px;background:var(--z-color-primary);color:#fff;text-decoration:none;font-size:13px;font-weight:600;line-height:1;box-shadow:0 14px 24px -18px var(--z-login-button-shadow-color);transition:background .16s,box-shadow .16s}
+.primary-button:hover{background:var(--z-color-primary-hover)}
+.primary-button:active{background:var(--z-color-primary-active)}
+.primary-button:disabled{opacity:.75}
+.primary-button .icon{width:16px;height:16px}
+button:focus-visible,a:focus-visible,.remember-choice input:focus-visible{outline:2px solid var(--z-color-primary);outline-offset:4px}
+.login-error{margin:-12px 0 -12px;padding:11px 12px;border:1px solid color-mix(in srgb,var(--z-color-error) 20%,transparent);border-radius:6px;background:var(--z-login-error-bg);color:var(--z-login-error-text-color);font-size:12px;line-height:1.6}
+.authenticated-panel{display:grid;gap:10px}
+.secondary-button{width:100%;min-height:40px;padding:8px 12px;border:1px solid var(--z-color-border);border-radius:6px;background:transparent;color:var(--z-login-description-color)}
+.secondary-button:hover{background:var(--z-login-input-hover-bg)}
+@media(min-width:980px){.login-layout{justify-items:end;padding-top:clamp(24px,5dvh,64px);padding-bottom:clamp(24px,5dvh,64px);padding-right:clamp(48px,17.3vw,332px)}.panel-wrap{min-height:480px}}
+@media(max-width:560px){.page-controls{top:16px;right:16px}.login-layout{padding-right:18px;padding-left:18px}.login-panel{gap:24px;padding:26px 22px 22px}.brand-name strong{font-size:16px}h1{font-size:30px}.login-watermark{top:12%;font-size:11px}.input-wrap input{font-size:16px}.input-wrap input::placeholder{font-size:13px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}.login-particle{display:none}}
