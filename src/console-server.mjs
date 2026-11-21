@@ -4693,18 +4693,37 @@ async function deleteJobsByEmail(email) {
   }
   for (const job of matching) await overrideScheduledJob(job, "账号已删除，定时任务停止");
   const directories = new Set();
+  const stoppedWorkers = [];
   matching.forEach((job) => {
     job.deleted = true;
+    job.queueRunId = null;
+    job.status = "canceled";
     stopMailPolling(job);
     releaseSmsNumber(job, "idle");
     job.runId = crypto.randomUUID();
-    job.child?.kill("SIGTERM");
+    const child = job.child;
+    if (child && child.exitCode === null && child.signalCode === null) {
+      stoppedWorkers.push(new Promise((resolve, reject) => {
+        let killTimer, failureTimer;
+        const stopped = () => { clearTimeout(killTimer); clearTimeout(failureTimer); resolve(); };
+        child.once("close", stopped);
+        killTimer = setTimeout(() => child.kill("SIGKILL"), 3_000);
+        failureTimer = setTimeout(() => {
+          child.off("close", stopped);
+          reject(httpError(409, "任务进程尚未退出，已保留工作目录等待核实"));
+        }, 8_000);
+        child.kill("SIGTERM");
+      }));
+    }
     job.child = null;
     directories.add(path.dirname(job.outputPath));
     jobs.delete(job.id);
   });
   matching.forEach((job) => { securityOperations.delete(job); serverDatabase.deleteJob(job.id); });
   accountLifecycle.remove(email);
+  // A worker may still finish a checkpoint after SIGTERM. Remove its directory
+  // only after the process exits; invalidating queueRunId also stops preparation.
+  await Promise.all(stoppedWorkers);
   await Promise.allSettled(matching.map((job) => job.metadataWritePromise).filter(Boolean));
   await Promise.all([
     ...[...directories].map((directory) => fs.rm(directory, { recursive: true, force: true })),

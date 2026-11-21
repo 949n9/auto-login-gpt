@@ -126,7 +126,18 @@ try {
   const logsAfterConcurrentRelogin = await (await fetch(`${baseUrl}/api/jobs/${jobId}/logs`, { headers })).json();
   assert.equal(countOccurrences(logsAfterConcurrentRelogin.logs, "Mock queued login started"), 3);
   await fetch(`${baseUrl}/api/jobs/${jobId}/cancel`, { method: "POST", headers, body: "{}" });
-  console.log("console job lock tests passed");
+  const lateWriter = await fetch(`${baseUrl}/api/jobs`, {
+    method: "POST", headers, body: JSON.stringify({ email: "delete-late-writer@example.invalid" }),
+  }).then(response => response.json());
+  await waitForJob(headers, lateWriter.job.id, job => job.status === "email_otp");
+  const deleted = await fetch(`${baseUrl}/api/jobs/delete-batch`, {
+    method: "POST", headers, body: JSON.stringify({ ids: [lateWriter.job.id] }),
+  });
+  assert.equal(deleted.status, 200, await deleted.text());
+  await delay(300);
+  await assert.rejects(fs.access(path.join(outputRoot, lateWriter.job.id)), { code: "ENOENT" },
+    "a worker completing its final checkpoint must not recreate a deleted directory");
+  console.log("console job lock and worker shutdown before deletion tests passed");
 } catch (error) {
   error.message = `${error.message}\nConsole output:\n${consoleLogs}`;
   throw error;
